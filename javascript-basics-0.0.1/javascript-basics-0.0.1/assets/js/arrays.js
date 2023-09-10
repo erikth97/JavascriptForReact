@@ -12,7 +12,7 @@ let arregloCosas = [
     function(){},
     ()=>{},
     { a: 1},
-
+    ['X', 'Megaman', 'Zero', 'Dr. Ligth']
 ];
 
-console.log({arregloCosas})
+console.log(arregloCosas [7][3])
