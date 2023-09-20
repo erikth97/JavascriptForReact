@@ -50,3 +50,8 @@ personaje.dinero = 1000000000;
 personaje.casado = false;
 personaje.address.location = "Monterrey";
 console.log(personaje);
+
+
+const propiedades = Object.getOwnPropertyNames(personaje);
+const valores     = Object.values(personaje);
+console.log({propiedades, valores})
