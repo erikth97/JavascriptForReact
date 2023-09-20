@@ -43,6 +43,10 @@ const entriesPares = Object.entries(personaje);
 console.log(entriesPares);
 
 // personaje = true
-console.log(personaje);
 
 Object.freeze(personaje);
+
+personaje.dinero = 1000000000;
+personaje.casado = false;
+personaje.address.location = "Monterrey";
+console.log(personaje);
