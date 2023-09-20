@@ -1,4 +1,4 @@
-let personaje = {
+const personaje = {
     name: 'Tony Stark',
     codeNmae: 'Iron Man',
     alive: false,
@@ -29,3 +29,20 @@ const x = 'vivo';
 console.log('Vivo', personaje[x]);
 
 console.log('Ultima pelicula', personaje['ultima-pelicula']);
+
+
+// More Details
+
+delete personaje.age;
+console.log(personaje);
+
+personaje.casado = true;
+
+
+const entriesPares = Object.entries(personaje);
+console.log(entriesPares);
+
+// personaje = true
+console.log(personaje);
+
+Object.freeze(personaje);
