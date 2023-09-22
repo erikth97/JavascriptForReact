@@ -8,7 +8,16 @@ const saludar2 = function(nombre) {
     console.log('Hola' + nombre);
 }
 
+const saludarFlecha = () => {
+    console.log('Hola Flecha')
+}
 
+const saludarFlecha2 = (nombre) => {
+    console.log('Hola' + nombre)
+}
 
 
 saludar ('Erik', 25, true, 'Monterrey')
+
+saludarFlecha()
+saludarFlecha2()
