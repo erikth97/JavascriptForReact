@@ -15,7 +15,12 @@ function imprimeArgumentos() {
 }
 
 const imprimeArgumentos2 = (edad, ...args ) => {
-    console.log({edad, args});
+   // console.log({edad, args});
+   return args;
 }
 
-imprimeArgumentos2(10, true, false, 'Erik', 'Tamayo')
+const [ soltero, vivo, nombre, saludo ] = imprimeArgumentos2(10, true, false, 'Erik', 'Tamayo')
+console.log({soltero, vivo, nombre, saludo})
+
+const {apellido: nuevoApellido } = crearPersona( 'Erik', 'Tamayo');
+console.log({ nuevoApellido })
