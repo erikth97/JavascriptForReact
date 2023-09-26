@@ -2,7 +2,7 @@
 
 dia = 6; // 0: domingo, 1: lunes...
 
-const diasLetras = {
+const forma1 = {
     0: 'domingo',
     1: 'lunes',
     2: 'martes',
@@ -13,4 +13,7 @@ const diasLetras = {
 }
 
 // dia de la semana
-console.log( diasLetras[dia])
+console.log( forma1[dia])
+
+const forma2 = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado',]
+
