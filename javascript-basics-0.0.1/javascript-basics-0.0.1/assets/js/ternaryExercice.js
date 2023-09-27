@@ -16,3 +16,13 @@ const amigosArr = [
 ];
 
 console.log(amigosArr)
+
+
+const nota = 82;
+const grado =   nota >= 95 ? 'A+':
+                nota >= 90 ? 'A':
+                nota >= 85 ? 'B':
+                nota >= 80 ? 'C':
+                nota >= 75 ? 'D':
+                nota >= 70 ? 'F': 'G';
+                
