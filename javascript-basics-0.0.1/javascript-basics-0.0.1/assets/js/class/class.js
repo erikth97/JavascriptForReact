@@ -12,6 +12,15 @@ class Persona {
         this.frase = frase;
     }
 
+    quienSoy() {
+        console.log(`Soy ${this.nombre} y mi identidad es ${this.codigo}`);
+    }
+
+    miFrase(){
+        quienSoy();
+        console.log(`${this.codigo} dice; ${this.frase}`);
+    }
+
 }
 
 
