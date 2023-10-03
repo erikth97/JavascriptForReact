@@ -1,6 +1,18 @@
 
 
 class Persona {
+
+    static _conteo = 0;
+    static get conteo(){
+        return Persona._conteo + 'instancias';
+    }
+
+    static mensaje(){
+        console.log(this.nombre); //undefined
+        console.log('Hola a todos, soy un metodos statico');
+    }
+
+
     nombre = '';
     codigo = '';
     frase = '';
@@ -11,6 +23,8 @@ class Persona {
         this.nombre = nombre;
         this.codigo = codigo;
         this.frase = frase;
+
+        Persona._conteo++;
     }
 
     set setComidaFavorita(comida) {
@@ -39,7 +53,16 @@ const spiderman = new Persona('Peter', 'Spider', 'Hola');
 
 spiderman.setComidaFavorita = 'Pie de cereza'
 
-console.log(spiderman.getComidaFavorita);
+// console.log(spiderman.getComidaFavorita);
 
-console.log(spiderman);
+// console.log(spiderman);
+
+console.log('Conteo statico', Persona._conteo);
+console.log(Persona.conteo);
+Persona.mensaje();
+
+Persona.propiedadExterna = 'Hola';
+
+console.log(Persona.propiedadExterna);
+console.log(Persona);
 
