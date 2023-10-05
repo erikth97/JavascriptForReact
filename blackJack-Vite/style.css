@@ -7,8 +7,8 @@ html, body {
 
 .titulo {
   text-align: center;
-  background-color: red;
-  color: whitesmoke;
+  background-color: black;
+  color: white;
   padding: 20px;
   font-size: 25px;
 }
@@ -23,4 +23,3 @@ html, body {
 #computadora-cartas, #jugador-cartas {
   height: 240px;
 }
-
