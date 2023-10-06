@@ -1,8 +1,21 @@
 import _ from 'underscore';
 
-export const miNombre = 'Erik';
+//export const miNombre = 'Erik';
 
+
+/**
+ * 
+ * @param {Array<string>} tiposDeCarta Ejemplo:
+ * @param {Array<string>} tiposEspeciales Ejemplo: 
+ * @returns {Array<string>} Retorna un nuevo deck de cartas
+ */
 export const crearDeck = (tiposDeCarta, tiposEspeciales) => {
+
+    if (!tiposDeCarta || tiposDeCarta.length === 0)
+        throw new Error('TiposDeCarta es obligatorio');
+    
+    if (!tiposEspeciales || tiposEspeciales.length === 0)
+        throw new Error('TiposEspeciales es obligatorio');
 
     let deck = [];
 
