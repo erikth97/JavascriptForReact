@@ -28,8 +28,8 @@ const divCartasComputadora = document.querySelector('#computadora-cartas');
 const puntosHTML = document.querySelectorAll('small');
 
 
-
 deck = crearDeck(tipos, especiales);
+
 
 
 // Esta función me permite tomar una carta
