@@ -1,19 +1,19 @@
-import { Todo } from "../models/todo.models";
+import { Todo } from '../models/todo.model';
 
 
 /**
  * 
- * @param {Todo} todo
+ * @param {Todo} todo 
  */
-export const createTodoHTML = (todo) => {
-    if (!todo) throw new Error('A TODO Object is required');
-    
-    const {done, description, id} = todo;
+export const createTodoHTML = ( todo ) => {
+    if ( !todo ) throw new Error('A TODO object is required');
+
+    const { done, description, id } = todo;
 
     const html = `
         <div class="view">
-            <input class="toggle" type="checkbox" ${done ? 'checked': ''}>
-            <label>${description}</label>
+            <input class="toggle" type="checkbox" ${ done ? 'checked': '' }>
+            <label>${ description }</label>
             <button class="destroy"></button>
         </div>
         <input class="edit" value="Create a TodoMVC template">
@@ -21,11 +21,11 @@ export const createTodoHTML = (todo) => {
 
     const liElement = document.createElement('li');
     liElement.innerHTML = html;
-    liElement.setAttribute('data-id', id);
+    liElement.setAttribute('data-id', id );
 
-    if (todo.done)
+    if ( todo.done )
         liElement.classList.add('completed');
-
+    
 
     return liElement;
 }
