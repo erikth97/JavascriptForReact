@@ -30,7 +30,8 @@ export const App = (elementID) => {
 
     // Referencias HTML
     const newDescriptionInput = document.querySelector(elementIDs.NewTodoInput);
-    
+    const todoListUL = document.querySelector(elementIDs.TodoList);
+
 
     // Listeners
     newDescriptionInput.addEventListener('keyup', (event) => {
@@ -40,6 +41,13 @@ export const App = (elementID) => {
         todoStore.addTodo(event.target.value);
         displayTodos();
         event.target.value = '';
+    });
+
+    todoListUL.addEventListener('click', (event) => {
+        const element = event.target.closest('[data-id]');
+        displayTodos();
     })
+
+
 
 }
