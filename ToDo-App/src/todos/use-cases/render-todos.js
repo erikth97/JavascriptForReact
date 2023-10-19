@@ -1,24 +1,24 @@
-import {Todo} from '../models/todo.models';
-import { createTodoHTML } from './create-todo-html';
+import { Todo } from '../models/todo.model';
+import { createTodoHTML } from './';
 
 let element;
 
 /**
  * 
- * @param {String} elementID
- * @param {Todo} todos
+ * @param {String} elementId 
+ * @param {Todo} todos 
  */
-export const renderTodos = (elementID, todos = []) => {
+export const renderTodos = ( elementId, todos = [] ) => {
 
-    if (!element)
-        element = document.querySelector(elementID);
-
-    if (!element) throw new Error(`Element ${elementID} not found`)
+    if ( !element )
+        element = document.querySelector( elementId );
     
+    if ( !element ) throw new Error(`Element ${ elementId } not found`);
+
     element.innerHTML = '';
 
-    todos.forEach(todo => {
-        element.append(createTodoHTML(todo))
+    todos.forEach( todo => {
+        element.append( createTodoHTML(todo) )
     });
 
 }
