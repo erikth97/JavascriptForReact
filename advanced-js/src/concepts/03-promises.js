@@ -6,6 +6,14 @@ import {heroes} from '../data/heroes';
  */
 export const promiseComponent = (element) => {
 
+    const renderHero = (hero) => {
+        element.innerHTML = hero.name;
+    }
+
+    const id1 = '5d86371f9f80b591f499df32';
+
+    findHero(id1)
+        .then(renderHero);
 
 
 }
@@ -17,11 +25,11 @@ export const promiseComponent = (element) => {
  * @returns {Promise} 
  */
 const findHero = (id) => {
-
     return new Promise((resolve, reject) => {
+
         const hero = heroes.find(hero => hero.id === id);
 
-        if(hero) {
+        if (hero) {
             resolve(hero);
             return;
         }
