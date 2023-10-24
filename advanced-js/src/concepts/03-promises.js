@@ -10,6 +10,12 @@ export const promiseComponent = (element) => {
         element.innerHTML = hero.name;
     }
 
+    const renderError = (error) => {
+        element.innerHTML = `
+            <h3>${error}</h3>
+        `
+    }
+    
     const id1 = '5d86371f9f80b591f499df32';
 
     findHero(id1)
