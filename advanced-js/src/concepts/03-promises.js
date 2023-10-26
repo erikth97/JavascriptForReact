@@ -12,6 +12,7 @@ export const promiseComponent = (element) => {
 
     const renderError = (error) => {
         element.innerHTML = `
+            <h1>Error></h1>
             <h3>${error}</h3>
         `
     }
@@ -19,7 +20,8 @@ export const promiseComponent = (element) => {
     const id1 = '5d86371f9f80b591f499df32';
 
     findHero(id1)
-        .then(renderHero);
+        .then(renderHero)
+        .catch (renderError);
 
 
 }
