@@ -23,22 +23,38 @@ export const promiseComponent = (element) => {
             <h3>${error}</h3>
         `
     }
+
+ //   Promise.all([])
     
     const id1 = '5d86371f9f80b591f499df32';
     const id2 = '5d86371f97c29d020f1e1f6d';
 
-    findHero(id1)
-        .then((hero1) => {
-            
-            findHero(id2)
-                .then(hero2 => {
-                    renderTwoHeros(hero1, hero2)
-                })
-                .catch(renderError);
-        })
-        .catch (renderError);
+    let hero1;
 
-}
+
+        // ------ Forma 2
+// findHero(id1)
+//     .then(hero => {
+//         hero1 = hero;
+//         return findHero(id2);
+//     }).then( hero2 => {
+//         renderTwoHeros(hero1, hero2);
+//     })
+//     .catch(renderError);
+
+        // ----- Forma 1
+//     findHero(id1)
+//         .then((hero1) => {
+            
+//             findHero(id2)
+//                 .then(hero2 => {
+//                     renderTwoHeros(hero1, hero2)
+//                 })
+//                 .catch(renderError);
+//         })
+//         .catch (renderError);
+
+// }
 
 
 /**
