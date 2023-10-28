@@ -23,6 +23,7 @@ export const asyncAwait2Component = async(element) => {
         value3: ${value3} <br/>
         `;
 
+
 }
 
 
