@@ -1,40 +1,45 @@
-
 /**
- * @returns {Object} quote information
+ * 
+ * @returns { Promise<Object>}
  */
-const fetchQuote = async() => {
-
-    const res = await fetch('https://www.breakingbadapi.com/api/quote/random');
+const fetchQuote = async () => {
+    
+    const res = await fetch(`https://api.breakingbadquotes.xyz/v1/quotes`);
     const data = await res.json();
-
-    console.log(data[0]);
-    return data[0];
+    
+        return data;
 }
-
-
 
 /**
  * 
  * @param {HTMLDivElement} element 
  */
-export const BreakingbadApp = async(element) => {
-    document.querySelector('#app-title').innerHTML = 'Breakingbad App';
-    element.innerHTML = 'Loading...';
-    // await fetchQuote();
+export const BreakingbadApp = async (element) => {
 
+    element.innerHTML = 'Loading...';
+    
     const quoteLabel = document.createElement('blockquote');
     const authoLabel = document.createElement('h3');
     const nextQuoteButton = document.createElement('button');
     nextQuoteButton.innerText = 'Next Quote';
-
-
+    
     const renderQuote = (data) => {
-        quoteLabel.innerHTML = data.quote;
-        authoLabel.innerHTML = data.author;
-        element.replaceChildren(quoteLabel, authoLabel, nextQuoteButton);
+
+
+        quoteLabel.innerHTML = data[0].quote;
+        authoLabel.innerHTML = data[0].author;
+        element.replaceChildren(quoteLabel,authoLabel,nextQuoteButton);
+
     }
 
+    nextQuoteButton.addEventListener('click',async() => {
+        
+            element.innerHTML='Loading...';
+        const quote = await fetchQuote();
+        renderQuote(quote)
+    });
 
     fetchQuote()
-    .then(data => renderQuote(data))
+    .then(renderQuote);
+
 }
