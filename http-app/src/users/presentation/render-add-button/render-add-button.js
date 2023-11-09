@@ -1,20 +1,21 @@
-
+import { showModal } from '../render-modal/render-modal';
+import './render-add-button.css';
 
 /**
  * 
- * @param {HTMLDivElement} element
+ * @param {HTMLDivElement} element 
  */
-export const renderAddButton = (element) {
+export const renderAddButton = ( element ) => {
 
-    const faButton = document.createElement('button');
-    faButton.innerText = '+';
-    faButton.classList.add('fa-button');
+    const fabButton = document.createElement('button');
+    fabButton.innerText = '+';
+    fabButton.classList.add('fab-button');
 
-    element.append(faButton);
+    element.append( fabButton );
 
     //TODO:
-    faButton.addEventListener('click', () => {
-        throw Error('no implementado')
-    })
-    
+    fabButton.addEventListener('click', () =>{
+        showModal();
+    });
+
 }
